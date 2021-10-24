@@ -21,7 +21,6 @@ public class SupplierService {
         this.supplierRepository = supplierRepository;
     }
 
-
     public List<SupplierDTO> getCustomSuppliers(Specification<SupplierEntity> spec) {
         return supplierRepository
                 .findAll(spec)

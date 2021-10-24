@@ -47,45 +47,4 @@ public class SupplierController {
         return supplierRepository.findById(id);
     }
 
-//    @GetMapping("/suppliers")
-//    @ResponseBody
-//    public List<SupplierEntity> getAllSuppliers(@RequestParam(required = false) String name,
-//                                                @RequestParam(required = false) String title,
-//                                                @RequestParam(required = false) String city,
-//                                                @RequestParam(required = false) String region) {
-//        if (name == null && title == null && city == null && region == null) {
-//            return supplierRepository.findAll();
-//        }
-//
-////        Specification<SupplierEntity> spec = Specifications.where()
-//        return supplierRepository.findAll();
-//    }
-//
-//    @GetMapping("/suppliers")
-//    public List<SupplierEntity> getAllSuppliers(SupplierSpec supplierSpec) {
-//        return supplierRepository.findAll(supplierSpec);
-//    }
-
-//    @GetMapping
-//    public List<SupplierEntity> getAllSuppliers() {
-//        return supplierRepository.findAll();
-//    }
-
-
-
-    //works but need to provide all three params to return data.
-//    @GetMapping(value = "/suppliers", params = {"contactTitle","city","region"})
-//    public List<SupplierEntity> getSuppliersSearch(@RequestParam(required = false) String contactTitle,
-//                                                @RequestParam(required = false) String city,
-//                                                @RequestParam(required = false) String region) {
-//
-//        return supplierRepository.findAll()
-//                .stream()
-//                .filter(supplierEntity ->
-//                        (supplierEntity.getContactTitle().contains(contactTitle) &&
-//                                (supplierEntity.getCity().contains(city) &&
-//                                        (supplierEntity.getRegion().contains(region)))))
-//                .collect(Collectors.toList());
-//    }
-
 }
