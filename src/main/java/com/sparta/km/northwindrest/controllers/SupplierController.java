@@ -3,13 +3,16 @@ package com.sparta.km.northwindrest.controllers;
 import com.sparta.km.northwindrest.controllers.supplier.SupplierWithCity;
 import com.sparta.km.northwindrest.controllers.supplier.SupplierWithContactTitle;
 import com.sparta.km.northwindrest.controllers.supplier.SupplierWithCountry;
+import com.sparta.km.northwindrest.entities.ProductEntity;
 import com.sparta.km.northwindrest.entities.SupplierEntity;
 import com.sparta.km.northwindrest.repositories.SupplierRepository;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/suppliers")
@@ -30,6 +33,11 @@ public class SupplierController {
                 .and(new SupplierWithCity(city))
                 .and(new SupplierWithCountry(country));
         return supplierRepository.findAll(spec);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<SupplierEntity> getProductById(@PathVariable Integer id) {
+        return supplierRepository.findById(id);
     }
 
 //    @GetMapping("/suppliers")
